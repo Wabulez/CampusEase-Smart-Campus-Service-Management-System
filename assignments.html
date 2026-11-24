@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusEase - Assignments</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="logo"><i class="fa-solid fa-building-columns"></i><a href="index.html" style="color: inherit; text-decoration: none;"><span>CampusEase</span></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+            <li><a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> <span>Semester Schedule</span></a></li>
+            <li class="active"><a href="assignments.html"><i class="fa-solid fa-file"></i> <span>Pending Assignments</span></a></li>
+            <li><a href="services.html"><i class="fa-solid fa-layer-group"></i> <span>Services Directory</span></a></li>
+            <li><a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> <span>My Appointments</span></a></li>
+            <li><a href="queue.html"><i class="fa-solid fa-ticket"></i> <span>Virtual Queue</span></a></li>
+            <li><a href="events.html"><i class="fa-solid fa-star"></i> <span>Upcoming Events</span></a></li>
+            <li><a href="feedback.html"><i class="fa-solid fa-comment-dots"></i> <span>Submit Feedback</span></a></li>
+            <li><a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+        </ul>
+        <ul class="nav-links logout"><li><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Secure Log out</span></a></li></ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left"><button id="burger-btn" class="burger-btn"><i class="fa-solid fa-bars"></i></button></div>
+            <div class="header-right">
+                <div class="theme-switch-wrapper"><span>Dark Mode</span><label class="theme-switch" for="theme-toggle"><input type="checkbox" id="theme-toggle"><div class="slider"></div></label></div>
+                <button class="header-btn" onclick="window.location.href='login.html'">Log Out</button>
+            </div>
+        </header>
+
+        <h2 class="page-title"><i class="fa-solid fa-file"></i> Assignments Portal</h2>
+        
+        <div class="full-grid-3">
+            <!-- Assignment 1 -->
+            <div class="card">
+                <div class="task-date purple-variant" style="width: max-content; margin-bottom: 15px;">Deadline: 28.11.2026</div>
+                <h4>Event Programming Project</h4>
+                <p style="font-size: 12px; color: var(--text-muted); margin: 10px 0;">Build a functional event-driven application using Java GUI components.</p>
+                <label class="file-upload-box">
+                    <input type="file" />
+                    <span class="file-upload-label"><i class="fa-solid fa-cloud-arrow-up"></i> Click to browse (.zip, .pdf)</span>
+                </label>
+                <button class="action-btn purple-btn" style="width: 100%; margin-top: 15px;" onclick="alert('Assignment Submitted!')">Submit File</button>
+            </div>
+
+            <!-- Assignment 2 -->
+            <div class="card">
+                <div class="task-date" style="width: max-content; margin-bottom: 15px;">Deadline: 14.11.2026</div>
+                <h4>HCI Prototype Evaluation</h4>
+                <p style="font-size: 12px; color: var(--text-muted); margin: 10px 0;">Submit Figma shareable link and a heuristic evaluation report.</p>
+                <label class="file-upload-box">
+                    <input type="file" />
+                    <span class="file-upload-label"><i class="fa-solid fa-cloud-arrow-up"></i> Click to browse (.pdf)</span>
+                </label>
+                <button class="action-btn navy-btn" style="width: 100%; margin-top: 15px;" onclick="alert('Assignment Submitted!')">Submit File</button>
+            </div>
+
+            <!-- Assignment 3: Data Structures & Algorithms -->
+            <div class="card">
+                <div class="task-date purple-variant" style="width: max-content; margin-bottom: 15px;">Deadline: 20.11.2026</div>
+                <h4>Data Structures & Algorithms</h4>
+                <p style="font-size: 12px; color: var(--text-muted); margin: 10px 0;">Implement Graph Traversal Algorithms (BFS/DFS) and Dijkstra's Shortest Path algorithm.</p>
+                <label class="file-upload-box">
+                    <input type="file" />
+                    <span class="file-upload-label"><i class="fa-solid fa-cloud-arrow-up"></i> Click to browse (.zip, .cpp, .py)</span>
+                </label>
+                <button class="action-btn purple-btn" style="width: 100%; margin-top: 15px;" onclick="alert('Assignment Submitted!')">Submit File</button>
+            </div>
+
+            <!-- Assignment 4: Database Management Systems -->
+            <div class="card">
+                <div class="task-date" style="width: max-content; margin-bottom: 15px;">Deadline: 25.11.2026</div>
+                <h4>Database Management Systems</h4>
+                <p style="font-size: 12px; color: var(--text-muted); margin: 10px 0;">Design ER Diagrams and write SQL DDL/DML scripts for a 3NF normalized university schema.</p>
+                <label class="file-upload-box">
+                    <input type="file" />
+                    <span class="file-upload-label"><i class="fa-solid fa-cloud-arrow-up"></i> Click to browse (.sql, .pdf)</span>
+                </label>
+                <button class="action-btn navy-btn" style="width: 100%; margin-top: 15px;" onclick="alert('Assignment Submitted!')">Submit File</button>
+            </div>
+
+            <!-- Assignment 5: Computer Networks & Security -->
+            <div class="card">
+                <div class="task-date purple-variant" style="width: max-content; margin-bottom: 15px;">Deadline: 02.12.2026</div>
+                <h4>Computer Networks & Security</h4>
+                <p style="font-size: 12px; color: var(--text-muted); margin: 10px 0;">Analyze Wireshark network packet captures and configure stateful firewall rules.</p>
+                <label class="file-upload-box">
+                    <input type="file" />
+                    <span class="file-upload-label"><i class="fa-solid fa-cloud-arrow-up"></i> Click to browse (.pcapng, .pdf)</span>
+                </label>
+                <button class="action-btn purple-btn" style="width: 100%; margin-top: 15px;" onclick="alert('Assignment Submitted!')">Submit File</button>
+            </div>
+
+            <!-- Assignment 6: Artificial Intelligence & Machine Learning -->
+            <div class="card">
+                <div class="task-date" style="width: max-content; margin-bottom: 15px;">Deadline: 08.12.2026</div>
+                <h4>Artificial Intelligence & ML</h4>
+                <p style="font-size: 12px; color: var(--text-muted); margin: 10px 0;">Train a classification model using Scikit-Learn and evaluate accuracy and confusion matrices.</p>
+                <label class="file-upload-box">
+                    <input type="file" />
+                    <span class="file-upload-label"><i class="fa-solid fa-cloud-arrow-up"></i> Click to browse (.ipynb, .pdf)</span>
+                </label>
+                <button class="action-btn navy-btn" style="width: 100%; margin-top: 15px;" onclick="alert('Assignment Submitted!')">Submit File</button>
+            </div>
+
+            <!-- Assignment 7: Web Application Development -->
+            <div class="card">
+                <div class="task-date purple-variant" style="width: max-content; margin-bottom: 15px;">Deadline: 15.12.2026</div>
+                <h4>Web Application Development</h4>
+                <p style="font-size: 12px; color: var(--text-muted); margin: 10px 0;">Develop a RESTful API using Node.js/Express and integrate JWT user authentication.</p>
+                <label class="file-upload-box">
+                    <input type="file" />
+                    <span class="file-upload-label"><i class="fa-solid fa-cloud-arrow-up"></i> Click to browse (.zip)</span>
+                </label>
+                <button class="action-btn purple-btn" style="width: 100%; margin-top: 15px;" onclick="alert('Assignment Submitted!')">Submit File</button>
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

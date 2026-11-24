@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusEase - Services Directory</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-building-columns"></i>
+            <a href="index.html" style="color: inherit; text-decoration: none;"><span>CampusEase</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+            <li><a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> <span>Semester Schedule</span></a></li>
+            <li><a href="assignments.html"><i class="fa-solid fa-file"></i> <span>Pending Assignments</span></a></li>
+            <li class="active"><a href="services.html"><i class="fa-solid fa-layer-group"></i> <span>Services Directory</span></a></li>
+            <li><a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> <span>My Appointments</span></a></li>
+            <li><a href="queue.html"><i class="fa-solid fa-ticket"></i> <span>Virtual Queue</span></a></li>
+            <li><a href="events.html"><i class="fa-solid fa-star"></i> <span>Upcoming Events</span></a></li>
+            <li><a href="feedback.html"><i class="fa-solid fa-comment-dots"></i> <span>Submit Feedback</span></a></li>
+            <li><a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+        </ul>
+        <ul class="nav-links logout">
+            <li><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Secure Log out</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <button id="burger-btn" class="burger-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="header-right">
+                <div class="theme-switch-wrapper">
+                    <span>Dark Mode</span>
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+                <div class="notification-container">
+                    <i class="fa-regular fa-bell notification-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <button class="header-btn" onclick="window.location.href='login.html'">Log Out</button>
+            </div>
+        </header>
+
+        <h2 class="page-title"><i class="fa-solid fa-layer-group"></i> University Services Directory</h2>
+        
+        <!-- 1. Emergency & Urgent Contact Banner -->
+        <div class="card" style="border-left: 5px solid #ef4444; background: linear-gradient(90deg, rgba(239, 68, 68, 0.08), transparent);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 45px; height: 45px; border-radius: 50%; background-color: #ef4444; color: white; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 15px; color: var(--text-main);">Need Emergency Assistance?</h4>
+                        <p style="font-size: 12px; color: var(--text-muted);">24/7 Campus Safety Patrol & Medical Dispatch are active right now.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button class="action-btn" style="background-color: #ef4444;" onclick="alert('Calling Campus Security Hotline: +254 700 911 911')"><i class="fa-solid fa-shield-halved"></i> Call Security</button>
+                    <button class="action-btn navy-btn" onclick="alert('Connecting to On-Call University Nurse...')"><i class="fa-solid fa-user-nurse"></i> Medical Helpline</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Search & Category Filter Bar -->
+        <div class="card" style="margin-bottom: 25px;">
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+                <div style="flex: 1; min-width: 250px; position: relative;">
+                    <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                    <input type="text" class="form-select" placeholder="Search departments, staff names, or services..." style="padding-left: 40px; margin: 0;">
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span class="time-pill bg-purple" style="cursor: pointer; padding: 8px 14px; font-weight: 600;">All Services</span>
+                    <span class="time-pill" style="cursor: pointer; padding: 8px 14px; background-color: var(--input-bg); color: var(--text-muted);">Academic</span>
+                    <span class="time-pill" style="cursor: pointer; padding: 8px 14px; background-color: var(--input-bg); color: var(--text-muted);">Financial</span>
+                    <span class="time-pill" style="cursor: pointer; padding: 8px 14px; background-color: var(--input-bg); color: var(--text-muted);">IT Support</span>
+                    <span class="time-pill" style="cursor: pointer; padding: 8px 14px; background-color: var(--input-bg); color: var(--text-muted);">Campus Life</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Centralized Services Grid with Detailed Information & Lead Officers -->
+        <div class="card">
+            <div class="card-title"><i class="fa-solid fa-building"></i> Administrative & Support Departments</div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 25px;">
+                Select an administrative department to review details, contact the department lead, join virtual queues, or reserve appointment slots.
+            </p>
+            
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+                
+                <!-- Department 1: Registrar -->
+                <div class="service-item navy" style="text-align: left; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                            <i class="fa-solid fa-file-signature service-icon" style="margin: 0; font-size: 28px;"></i>
+                            <span class="time-pill" style="background-color: #d1fae5; color: #065f46; font-size: 10px; font-weight: 700;">OPEN NOW</span>
+                        </div>
+                        <h4 style="font-size: 16px; margin-bottom: 4px;">Registrar's Office</h4>
+                        <div style="display: inline-flex; align-items: center; gap: 6px; background-color: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 6px; margin: 6px 0 10px; border: 1px solid var(--border-color);">
+                            <i class="fa-solid fa-user-tie" style="color: var(--accent-color); font-size: 12px;"></i>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-main);">In Charge: Dr. Diana Prince</span>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px;">
+                            Handles official academic transcripts, degree verifications, course deferrals, and graduation clearance.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: auto;">
+                        <button class="action-btn navy-btn" style="flex: 1; padding: 8px;" onclick="window.location.href='queue.html'">Join Queue</button>
+                        <button class="action-btn purple-btn" style="flex: 1; padding: 8px;" onclick="window.location.href='appointments.html'">Book Slot</button>
+                    </div>
+                </div>
+
+                <!-- Department 2: Financial Aid -->
+                <div class="service-item lightblue" style="text-align: left; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                            <i class="fa-solid fa-money-check-dollar service-icon" style="margin: 0; font-size: 28px;"></i>
+                            <span class="time-pill" style="background-color: #d1fae5; color: #065f46; font-size: 10px; font-weight: 700;">QUEUE ACTIVE</span>
+                        </div>
+                        <h4 style="font-size: 16px; margin-bottom: 4px;">Financial Aid Office</h4>
+                        <div style="display: inline-flex; align-items: center; gap: 6px; background-color: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 6px; margin: 6px 0 10px; border: 1px solid var(--border-color);">
+                            <i class="fa-solid fa-user-tie" style="color: var(--accent-color); font-size: 12px;"></i>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-main);">In Charge: Mr. Clark Kent</span>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px;">
+                            Manages university bursaries, HELB disbursements, installment payment plans, and scholarship grants.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: auto;">
+                        <button class="action-btn purple-btn" style="flex: 1; padding: 8px;" onclick="window.location.href='queue.html'">Join Queue</button>
+                        <button class="action-btn navy-btn" style="flex: 1; padding: 8px;" onclick="window.location.href='appointments.html'">Consultation</button>
+                    </div>
+                </div>
+
+                <!-- Department 3: IT Helpdesk -->
+                <div class="service-item purple" style="text-align: left; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                            <i class="fa-solid fa-laptop-code service-icon" style="margin: 0; font-size: 28px;"></i>
+                            <span class="time-pill bg-purple" style="font-size: 10px; font-weight: 700;">24/7 ONLINE</span>
+                        </div>
+                        <h4 style="font-size: 16px; margin-bottom: 4px;">ICT Helpdesk</h4>
+                        <div style="display: inline-flex; align-items: center; gap: 6px; background-color: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 6px; margin: 6px 0 10px; border: 1px solid var(--border-color);">
+                            <i class="fa-solid fa-user-gear" style="color: var(--accent-color); font-size: 12px;"></i>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-main);">In Charge: Eng. Victor Stone</span>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px;">
+                            Provides campus Wi-Fi troubleshooting, student portal password resets, hardware support, and lab access.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: auto;">
+                        <button class="action-btn navy-btn" style="flex: 1; padding: 8px;" onclick="alert('Ticket creation form opened!')">Open Ticket</button>
+                        <button class="action-btn purple-btn" style="flex: 1; padding: 8px;" onclick="window.location.href='appointments.html'">Tech Visit</button>
+                    </div>
+                </div>
+
+                <!-- Department 4: Housing & Dining -->
+                <div class="service-item lightblue" style="text-align: left; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                            <i class="fa-solid fa-house-chimney-user service-icon" style="margin: 0; font-size: 28px;"></i>
+                            <span class="time-pill" style="background-color: #d1fae5; color: #065f46; font-size: 10px; font-weight: 700;">OPEN NOW</span>
+                        </div>
+                        <h4 style="font-size: 16px; margin-bottom: 4px;">Housing & Student Dining</h4>
+                        <div style="display: inline-flex; align-items: center; gap: 6px; background-color: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 6px; margin: 6px 0 10px; border: 1px solid var(--border-color);">
+                            <i class="fa-solid fa-user-tie" style="color: var(--accent-color); font-size: 12px;"></i>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-main);">In Charge: Mrs. Selina Kyle</span>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px;">
+                            Oversees hostel allocation, maintenance requests, room swapping approvals, and cafeteria meal plan cards.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: auto;">
+                        <button class="action-btn purple-btn" style="flex: 1; padding: 8px;" onclick="window.location.href='appointments.html'">Book Visit</button>
+                        <button class="action-btn navy-btn" style="flex: 1; padding: 8px;" onclick="alert('Navigating to hostel portal...')">Room Portal</button>
+                    </div>
+                </div>
+
+                <!-- Department 5: Student Health & Counseling -->
+                <div class="service-item navy" style="text-align: left; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                            <i class="fa-solid fa-stethoscope service-icon" style="margin: 0; font-size: 28px;"></i>
+                            <span class="time-pill" style="background-color: #d1fae5; color: #065f46; font-size: 10px; font-weight: 700;">CLINIC OPEN</span>
+                        </div>
+                        <h4 style="font-size: 16px; margin-bottom: 4px;">Health & Wellness Center</h4>
+                        <div style="display: inline-flex; align-items: center; gap: 6px; background-color: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 6px; margin: 6px 0 10px; border: 1px solid var(--border-color);">
+                            <i class="fa-solid fa-user-doctor" style="color: var(--accent-color); font-size: 12px;"></i>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-main);">In Charge: Dr. Jane Foster</span>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px;">
+                            Offers out-patient medical consultations, pharmacy services, confidential mental health therapy, and wellness checks.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: auto;">
+                        <button class="action-btn navy-btn" style="flex: 1; padding: 8px;" onclick="window.location.href='appointments.html'">Book Doctor</button>
+                        <button class="action-btn purple-btn" style="flex: 1; padding: 8px;" onclick="window.location.href='appointments.html'">Counseling</button>
+                    </div>
+                </div>
+
+                <!-- Department 6: Library Services -->
+                <div class="service-item purple" style="text-align: left; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                            <i class="fa-solid fa-book-open-reader service-icon" style="margin: 0; font-size: 28px;"></i>
+                            <span class="time-pill bg-purple" style="font-size: 10px; font-weight: 700;">SILENT LABS OPEN</span>
+                        </div>
+                        <h4 style="font-size: 16px; margin-bottom: 4px;">University Library</h4>
+                        <div style="display: inline-flex; align-items: center; gap: 6px; background-color: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 6px; margin: 6px 0 10px; border: 1px solid var(--border-color);">
+                            <i class="fa-solid fa-user-graduate" style="color: var(--accent-color); font-size: 12px;"></i>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-main);">In Charge: Mr. Peter Parker</span>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px;">
+                            Manages physical book loans, online research journal databases, discussion study rooms, and plagiarism checks.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: auto;">
+                        <button class="action-btn purple-btn" style="flex: 1; padding: 8px;" onclick="alert('Study Room Reservation Opened!')">Reserve Room</button>
+                        <button class="action-btn navy-btn" style="flex: 1; padding: 8px;" onclick="alert('Accessing E-Journals Database...')">E-Library</button>
+                    </div>
+                </div>
+
+                <!-- Department 7: Security & Student Cards -->
+                <div class="service-item navy" style="text-align: left; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                            <i class="fa-solid fa-id-card service-icon" style="margin: 0; font-size: 28px;"></i>
+                            <span class="time-pill" style="background-color: #d1fae5; color: #065f46; font-size: 10px; font-weight: 700;">24/7 PATROL</span>
+                        </div>
+                        <h4 style="font-size: 16px; margin-bottom: 4px;">Campus Security & Badging</h4>
+                        <div style="display: inline-flex; align-items: center; gap: 6px; background-color: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 6px; margin: 6px 0 10px; border: 1px solid var(--border-color);">
+                            <i class="fa-solid fa-user-shield" style="color: var(--accent-color); font-size: 12px;"></i>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-main);">In Charge: Major (Rtd.) James Gordon</span>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px;">
+                            Issues replacement smart student IDs, manages vehicle campus permits, lost-and-found desk, and safety escorts.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: auto;">
+                        <button class="action-btn purple-btn" style="flex: 1; padding: 8px;" onclick="alert('Replacement ID requested!')">Replace ID</button>
+                        <button class="action-btn navy-btn" style="flex: 1; padding: 8px;" onclick="alert('Lost & Found catalog loaded!')">Lost & Found</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 4. Two-Column Layout: Live Service Operating Hours & Frequently Asked Questions -->
+        <div class="bottom-row">
+            
+            <!-- Operating Hours & Peak Times Card -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fa-solid fa-clock" style="color: var(--accent-color)"></i> Department Operating Hours & Peak Times
+                </div>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr><th>Department</th><th>Working Hours</th><th>Peak Times (Avoid)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Registrar's Office</strong></td>
+                                <td>Mon - Fri: 8:00 AM - 4:30 PM</td>
+                                <td><span class="time-pill bg-purple">11:00 AM - 1:00 PM</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Financial Aid</strong></td>
+                                <td>Mon - Fri: 8:30 AM - 4:00 PM</td>
+                                <td><span class="time-pill bg-purple">9:30 AM - 11:30 AM</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IT Helpdesk Desk</strong></td>
+                                <td>Mon - Sat: 7:30 AM - 7:00 PM</td>
+                                <td><span class="time-pill bg-blue">8:00 AM - 10:00 AM</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>University Health Center</strong></td>
+                                <td>Mon - Sun: 24 Hours Open</td>
+                                <td><span class="time-pill">12:00 PM - 2:00 PM</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Service Requests FAQ -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fa-solid fa-circle-question" style="color: var(--accent-color)"></i> Services Directory FAQ
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="background-color: var(--bg-body); padding: 12px 15px; border-radius: 10px;">
+                        <h4 style="font-size: 13px; color: var(--text-main); margin-bottom: 4px;"><i class="fa-solid fa-circle-info" style="color: var(--accent-color);"></i> How do virtual queues work?</h4>
+                        <p style="font-size: 12px; color: var(--text-muted);">Join the queue online from your phone or laptop. You will receive an SMS when you are 3rd in line so you don't have to wait physically in line.</p>
+                    </div>
+                    <div style="background-color: var(--bg-body); padding: 12px 15px; border-radius: 10px;">
+                        <h4 style="font-size: 13px; color: var(--text-main); margin-bottom: 4px;"><i class="fa-solid fa-circle-info" style="color: var(--accent-color);"></i> What if I need to cancel an appointment?</h4>
+                        <p style="font-size: 12px; color: var(--text-muted);">Navigate to the <a href="appointments.html" style="color: var(--accent-color); font-weight: 600;">My Appointments</a> tab to reschedule or cancel up to 1 hour before your slot.</p>
+                    </div>
+                    <div style="background-color: var(--bg-body); padding: 12px 15px; border-radius: 10px;">
+                        <h4 style="font-size: 13px; color: var(--text-main); margin-bottom: 4px;"><i class="fa-solid fa-circle-info" style="color: var(--accent-color);"></i> How fast are IT tickets resolved?</h4>
+                        <p style="font-size: 12px; color: var(--text-muted);">Standard password and Wi-Fi tickets under Eng. Victor Stone are resolved within 2 business hours.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

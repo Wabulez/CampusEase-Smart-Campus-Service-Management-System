@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusEase - Submit Feedback</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-building-columns"></i>
+            <a href="index.html" style="color: inherit; text-decoration: none;"><span>CampusEase</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+            <li><a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> <span>Semester Schedule</span></a></li>
+            <li><a href="assignments.html"><i class="fa-solid fa-file"></i> <span>Pending Assignments</span></a></li>
+            <li><a href="services.html"><i class="fa-solid fa-layer-group"></i> <span>Services Directory</span></a></li>
+            <li><a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> <span>My Appointments</span></a></li>
+            <li><a href="queue.html"><i class="fa-solid fa-ticket"></i> <span>Virtual Queue</span></a></li>
+            <li><a href="events.html"><i class="fa-solid fa-star"></i> <span>Upcoming Events</span></a></li>
+            <li class="active"><a href="feedback.html"><i class="fa-solid fa-comment-dots"></i> <span>Submit Feedback</span></a></li>
+            <li><a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+        </ul>
+        <ul class="nav-links logout">
+            <li><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Secure Log out</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <button id="burger-btn" class="burger-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="header-right">
+                <div class="theme-switch-wrapper">
+                    <span>Dark Mode</span>
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+                <div class="notification-container">
+                    <i class="fa-regular fa-bell notification-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <button class="header-btn" onclick="window.location.href='login.html'">Log Out</button>
+            </div>
+        </header>
+
+        <h2 class="page-title"><i class="fa-solid fa-comment-dots"></i> Service Evaluation & Feedback Hub</h2>
+
+        <!-- 1. Feedback KPI Summary Widgets -->
+        <div style="display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <div class="card" style="flex: 1; min-width: 200px; margin-bottom: 0; padding: 18px; display: flex; align-items: center; gap: 15px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background-color: var(--accent-light); color: var(--accent-color); display: flex; align-items: center; justify-content: center; font-size: 22px;">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </div>
+                <div>
+                    <span style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Total Submitted</span>
+                    <h3 style="font-size: 22px; color: var(--text-main); font-weight: 700;">4 Reviews</h3>
+                </div>
+            </div>
+
+            <div class="card" style="flex: 1; min-width: 200px; margin-bottom: 0; padding: 18px; display: flex; align-items: center; gap: 15px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background-color: rgba(16, 185, 129, 0.15); color: #047857; display: flex; align-items: center; justify-content: center; font-size: 22px;">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div>
+                    <span style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Resolution Rate</span>
+                    <h3 style="font-size: 22px; color: #047857; font-weight: 700;">75% Actioned</h3>
+                </div>
+            </div>
+
+            <div class="card" style="flex: 1; min-width: 200px; margin-bottom: 0; padding: 18px; display: flex; align-items: center; gap: 15px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background-color: var(--pill-light-blue); color: var(--text-main); display: flex; align-items: center; justify-content: center; font-size: 22px;">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div>
+                    <span style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Avg. Rating Given</span>
+                    <h3 style="font-size: 22px; color: var(--text-main); font-weight: 700;">4.8 / 5.0</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            
+            <!-- Left Column: Primary Feedback Submission Form & Community Impact Wall -->
+            <div class="main-column">
+                
+                <!-- Detailed Submission Form Card -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-pen-to-square" style="color: var(--accent-color)"></i> Submit Department Evaluation or Suggestion
+                    </div>
+                    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+                        Your evaluation directly informs university policy, staff performance reviews, and service improvements across campus.
+                    </p>
+
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your feedback has been submitted to administration.');">
+                        
+                        <!-- Feedback Type & Department Selection -->
+                        <div class="settings-grid">
+                            <div class="form-group">
+                                <label>Feedback Category *</label>
+                                <select class="form-select" required>
+                                    <option value="" disabled selected>Select feedback type...</option>
+                                    <option value="service">Administrative Service Evaluation</option>
+                                    <option value="academic">Course & Lecturer Feedback</option>
+                                    <option value="facility">Campus Facilities & Infrastructure</option>
+                                    <option value="tech">CampusEase Portal & Wi-Fi Tech Issue</option>
+                                    <option value="suggestion">General Improvement Suggestion</option>
+                                    <option value="grievance">Formal Complaint / Escalation</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Target Department / Service Unit *</label>
+                                <select class="form-select" required>
+                                    <option value="" disabled selected>Select office or department...</option>
+                                    <option value="registrar">Registrar's Office (Dr. Diana Prince)</option>
+                                    <option value="financial">Financial Aid Office (Mr. Clark Kent)</option>
+                                    <option value="it">ICT Helpdesk (Eng. Victor Stone)</option>
+                                    <option value="housing">Housing & Dining (Mrs. Selina Kyle)</option>
+                                    <option value="health">Health & Wellness (Dr. Jane Foster)</option>
+                                    <option value="library">University Library (Mr. Peter Parker)</option>
+                                    <option value="career">Career & Placement (Ms. Pepper Potts)</option>
+                                    <option value="security">Campus Security (Major Rtd. James Gordon)</option>
+                                    <option value="faculty">Faculty of Computing & Applied Sciences</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Multi-Metric HCI Star Rating Section -->
+                        <div style="background-color: var(--bg-body); padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+                            <h4 style="font-size: 13px; color: var(--text-main); margin-bottom: 12px; font-weight: 600;">Rate Performance Metrics</h4>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                                <div>
+                                    <label style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 5px;">Service Speed & Response Time</label>
+                                    <div class="star-rating" style="font-size: 20px;">
+                                        <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 5px;">Staff Professionalism & Helpfulness</label>
+                                    <div class="star-rating" style="font-size: 20px;">
+                                        <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 5px;">Overall Experience Satisfaction</label>
+                                    <div class="star-rating" style="font-size: 20px;">
+                                        <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Feedback Text Area -->
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label>Detailed Feedback / Description of Experience *</label>
+                            <textarea class="form-select" rows="5" placeholder="Share specific details about what went well or where we can improve..." required></textarea>
+                        </div>
+
+                        <!-- Optional Screenshot / File Attachment -->
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label>Attach Supporting File / Screenshot (Optional)</label>
+                            <label class="file-upload-box" style="min-height: 90px; padding: 15px;">
+                                <input type="file" />
+                                <span class="file-upload-label">
+                                    <i class="fa-solid fa-paperclip" style="font-size: 24px;"></i>
+                                    <span>Attach photo, receipt, or screenshot (.png, .jpg, .pdf)</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Anonymous Toggle Option -->
+                        <div class="setting-toggle-row" style="margin-bottom: 25px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                            <div>
+                                <p style="font-size: 13px; font-weight: 600;">Submit Anonymously</p>
+                                <span style="font-size: 11px; color: var(--text-muted);">Hides your name and Student ID from department heads</span>
+                            </div>
+                            <label class="theme-switch"><input type="checkbox"><div class="slider"></div></label>
+                        </div>
+
+                        <button type="submit" class="action-btn purple-btn" style="width: 100%; font-size: 14px; padding: 12px;">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Evaluation
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Community Impact Wall: "You Said, We Did" -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-bullhorn" style="color: var(--accent-color)"></i> You Said, We Did: Student Feedback in Action
+                    </div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 18px;">
+                        Recent tangible campus upgrades driven directly by student evaluation submissions:
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="background-color: var(--accent-light); padding: 14px; border-radius: 12px; border-left: 4px solid var(--accent-color);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                                <strong style="font-size: 13px; color: var(--text-main);">ICT Wi-Fi Upgrades</strong>
+                                <span class="time-pill bg-purple" style="font-size: 10px;">OCTOBER 2026</span>
+                            </div>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;"><strong>You Said:</strong> "Wi-Fi signals drop frequently during afternoon CS practical labs."</p>
+                            <p style="font-size: 12px; color: var(--text-main);"><strong>We Did:</strong> ICT Helpdesk under Eng. Stone installed 4 high-capacity enterprise Access Points in Block B.</p>
+                        </div>
+
+                        <div style="background-color: var(--pill-light-blue); padding: 14px; border-radius: 12px; border-left: 4px solid #0369a1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                                <strong style="font-size: 13px; color: var(--text-main);">Extended Library Hours for Exam Revisions</strong>
+                                <span class="time-pill bg-blue" style="font-size: 10px;">SEPTEMBER 2026</span>
+                            </div>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;"><strong>You Said:</strong> "Library closes too early at 8:00 PM during project submission weeks."</p>
+                            <p style="font-size: 12px; color: var(--text-main);"><strong>We Did:</strong> Library Services extended opening hours to 11:00 PM on weekdays with reserved quiet study labs.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: My Past Feedback Tracker & SLA Information -->
+            <div class="side-column">
+                
+                <!-- Live Feedback Status Tracker Card -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-clock-rotate-left" style="color: var(--accent-color)"></i> My Submitted Feedback Status
+                    </div>
+
+                    <!-- Submission Item 1 -->
+                    <div style="border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin-bottom: 15px; background-color: var(--bg-card);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span class="time-pill" style="background-color: #d1fae5; color: #065f46; font-size: 10px; font-weight: 700;">RESOLVED</span>
+                            <span style="font-size: 11px; color: var(--text-muted);">Nov 02, 2026</span>
+                        </div>
+                        <h4 style="font-size: 13px; margin-bottom: 4px; color: var(--text-main);">Financial Aid Queue Clearance Speed</h4>
+                        <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">Target: Financial Aid Office</p>
+                        
+                        <div style="background-color: var(--bg-body); padding: 10px; border-radius: 8px; font-size: 11px; color: var(--text-main); margin-top: 8px;">
+                            <p style="font-weight: 600; color: var(--accent-color); margin-bottom: 2px;"><i class="fa-solid fa-reply"></i> Official Response from Mr. Kent:</p>
+                            <p style="color: var(--text-muted); font-size: 11px;">"Thank you for the note! We added Counter 4 during peak morning hours to reduce physical waiting times."</p>
+                        </div>
+                    </div>
+
+                    <!-- Submission Item 2 -->
+                    <div style="border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin-bottom: 15px; background-color: var(--bg-card);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span class="time-pill bg-purple" style="font-size: 10px; font-weight: 700;">UNDER REVIEW</span>
+                            <span style="font-size: 11px; color: var(--text-muted);">Oct 29, 2026</span>
+                        </div>
+                        <h4 style="font-size: 13px; margin-bottom: 4px; color: var(--text-main);">Hostel B Hot Water System Inspection</h4>
+                        <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">Target: Housing & Dining Department</p>
+                        
+                        <div style="background-color: var(--bg-body); padding: 10px; border-radius: 8px; font-size: 11px; color: var(--text-main); margin-top: 8px;">
+                            <p style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;"><i class="fa-solid fa-gear"></i> Status Update:</p>
+                            <p style="color: var(--text-muted); font-size: 11px;">Assigned to Mrs. Selina Kyle. Maintenance team scheduled for Friday inspection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feedback Policy & SLA Guarantee Card -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-shield-halved" style="color: var(--accent-color)"></i> Feedback SLAs & Confidentiality
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 14px; font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+                        <div style="display: flex; gap: 10px;">
+                            <i class="fa-solid fa-clock" style="color: var(--accent-color); font-size: 16px; margin-top: 2px;"></i>
+                            <div>
+                                <strong style="color: var(--text-main);">48-Hour Response SLA:</strong>
+                                <p>All non-anonymous feedback receives an official administrative reply within 2 business days.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 10px;">
+                            <i class="fa-solid fa-user-shield" style="color: var(--accent-color); font-size: 16px; margin-top: 2px;"></i>
+                            <div>
+                                <strong style="color: var(--text-main);">Non-Retaliation Protection:</strong>
+                                <p>CampusEase enforces strict protection policies for academic and service evaluations.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 10px;">
+                            <i class="fa-solid fa-envelope-open-text" style="color: var(--accent-color); font-size: 16px; margin-top: 2px;"></i>
+                            <div>
+                                <strong style="color: var(--text-main);">Direct Dean Escalation:</strong>
+                                <p>Urgent grievances can be routed directly to the Dean of Students at <code>dean@university.ac.ke</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

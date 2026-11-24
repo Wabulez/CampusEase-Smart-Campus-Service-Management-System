@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusEase - Settings</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-building-columns"></i>
+            <a href="index.html" style="color: inherit; text-decoration: none;"><span>CampusEase</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+            <li><a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> <span>Semester Schedule</span></a></li>
+            <li><a href="assignments.html"><i class="fa-solid fa-file"></i> <span>Pending Assignments</span></a></li>
+            <li><a href="services.html"><i class="fa-solid fa-layer-group"></i> <span>Services Directory</span></a></li>
+            <li><a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> <span>My Appointments</span></a></li>
+            <li><a href="queue.html"><i class="fa-solid fa-ticket"></i> <span>Virtual Queue</span></a></li>
+            <li><a href="events.html"><i class="fa-solid fa-star"></i> <span>Upcoming Events</span></a></li>
+            <li><a href="feedback.html"><i class="fa-solid fa-comment-dots"></i> <span>Submit Feedback</span></a></li>
+            <li class="active"><a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+        </ul>
+        <ul class="nav-links logout">
+            <li><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Secure Log out</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <button id="burger-btn" class="burger-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="header-right">
+                <div class="theme-switch-wrapper">
+                    <span>Dark Mode</span>
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+                <div class="notification-container">
+                    <i class="fa-regular fa-bell notification-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <button class="header-btn" onclick="window.location.href='login.html'">Log Out</button>
+            </div>
+        </header>
+
+        <h2 class="page-title"><i class="fa-solid fa-gear"></i> Account & System Settings</h2>
+
+        <div class="dashboard-grid">
+            
+            <!-- Left Column: Profile, Security, & Notifications -->
+            <div class="main-column">
+                
+                <!-- 1. Personal & Academic Profile Card -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-user-gear" style="color: var(--accent-color)"></i> Personal & Academic Profile
+                    </div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 20px;">
+                        Manage your official student profile information and contact details.
+                    </p>
+
+                    <!-- Avatar Edit Row -->
+                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                        <img src="https://placehold.co/400" alt="Profile Picture" class="profile-img" style="width: 75px; height: 75px; border: 3px solid var(--accent-color);">
+                        <div>
+                            <h4 style="font-size: 16px; color: var(--text-main); margin-bottom: 4px;">Bruce Wayne</h4>
+                            <p style="font-size: 12px; color: var(--accent-color); font-weight: 500; margin-bottom: 10px;">BSc in Computer Science (Year 3, Semester 2)</p>
+                            <div style="display: flex; gap: 10px;">
+                                <button class="action-btn purple-btn" style="padding: 6px 14px; font-size: 12px;" onclick="alert('Profile photo upload dialog opened!')">
+                                    <i class="fa-solid fa-camera"></i> Change Photo
+                                </button>
+                                <button class="action-btn navy-btn" style="padding: 6px 14px; font-size: 12px;" onclick="alert('Photo removed.')">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form onsubmit="event.preventDefault(); alert('Profile settings saved successfully!');">
+                        <div class="settings-grid">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-select" value="Bruce Wayne" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Admission / Student ID (Read-Only)</label>
+                                <input type="text" class="form-select" value="25000000000" disabled style="opacity: 0.7; background-color: var(--input-bg);" />
+                            </div>
+                            <div class="form-group">
+                                <label>University Email</label>
+                                <input type="email" class="form-select" value="bruce.wayne@university.ac.ke" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number (for SMS Queue Alerts)</label>
+                                <input type="tel" class="form-select" value="+254 700 000000" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Degree Program</label>
+                                <input type="text" class="form-select" value="Bachelor of Science in Computer Science" disabled style="opacity: 0.7; background-color: var(--input-bg);" />
+                            </div>
+                            <div class="form-group">
+                                <label>Assigned Academic Advisor</label>
+                                <input type="text" class="form-select" value="Ra's al Ghul (Room 2/6)" disabled style="opacity: 0.7; background-color: var(--input-bg);" />
+                            </div>
+                        </div>
+
+                        <!-- Emergency Contact Section -->
+                        <div style="background-color: var(--bg-body); padding: 15px; border-radius: 12px; margin: 15px 0 20px;">
+                            <h4 style="font-size: 13px; color: var(--text-main); margin-bottom: 10px; font-weight: 600;">
+                                <i class="fa-solid fa-heart-pulse" style="color: #ef4444;"></i> Emergency Contact Details
+                            </h4>
+                            <div class="settings-grid" style="margin-bottom: 0;">
+                                <div class="form-group">
+                                    <label>Emergency Contact Name</label>
+                                    <input type="text" class="form-select" value="Parent/Guardian name" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Emergency Phone Number</label>
+                                    <input type="tel" class="form-select" value="+254 711 222333" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="action-btn purple-btn" style="padding: 10px 24px;">Save Profile Changes</button>
+                    </form>
+                </div>
+
+                <!-- 2. Account Security & Two-Factor Authentication -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-shield-halved" style="color: var(--accent-color)"></i> Account Security & Login Methods
+                    </div>
+
+                    <!-- Change Password Form -->
+                    <form onsubmit="event.preventDefault(); alert('Password updated securely!');" style="margin-bottom: 25px;">
+                        <h4 style="font-size: 14px; color: var(--text-main); margin-bottom: 15px; font-weight: 600;">Change Password</h4>
+                        <div class="settings-grid">
+                            <div class="form-group">
+                                <label>Current Password</label>
+                                <input type="password" class="form-select" placeholder="••••••••" required />
+                            </div>
+                            <div class="form-group">
+                                <label>New Password</label>
+                                <input type="password" class="form-select" placeholder="Minimum 8 characters" required />
+                            </div>
+                        </div>
+                        <button type="submit" class="action-btn navy-btn" style="padding: 8px 20px;">Update Password</button>
+                    </form>
+
+                    <!-- Two-Factor Auth Row -->
+                    <div class="setting-toggle-row">
+                        <div>
+                            <p style="font-weight: 600;">Two-Factor Authentication (2FA)</p>
+                            <span style="font-size: 11px; color: var(--text-muted);">Require an SMS or Authenticator code when logging into CampusEase.</span>
+                        </div>
+                        <label class="theme-switch"><input type="checkbox" checked><div class="slider"></div></label>
+                    </div>
+
+                    <!-- Active Login Sessions Table -->
+                    <div style="margin-top: 20px;">
+                        <h4 style="font-size: 13px; color: var(--text-main); margin-bottom: 12px; font-weight: 600;">Active Login Sessions</h4>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background-color: var(--bg-body); border-radius: 10px;">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <i class="fa-solid fa-laptop" style="font-size: 20px; color: var(--accent-color);"></i>
+                                    <div>
+                                        <h5 style="font-size: 13px; color: var(--text-main);">Windows PC — Chrome Browser</h5>
+                                        <p style="font-size: 11px; color: var(--text-muted);">Nairobi, Kenya • <span style="color: #10b981; font-weight: 600;">Active Now (Current Session)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background-color: var(--bg-body); border-radius: 10px;">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <i class="fa-solid fa-mobile-screen-button" style="font-size: 20px; color: var(--text-muted);"></i>
+                                    <div>
+                                        <h5 style="font-size: 13px; color: var(--text-main);">Samsung S21+ — Chrome Mobile App</h5>
+                                        <p style="font-size: 11px; color: var(--text-muted);">Nairobi, Kenya • Last active 2 hours ago</p>
+                                    </div>
+                                </div>
+                                <button class="action-btn" style="background-color: #ef4444; padding: 4px 10px; font-size: 11px;" onclick="alert('Mobile session revoked.')">Revoke</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Notification & Alert Preferences -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-bell" style="color: var(--accent-color)"></i> Notification & Alert Preferences
+                    </div>
+
+                    <div class="setting-toggle-row">
+                        <div>
+                            <p style="font-weight: 600;">Virtual Queue SMS Updates</p>
+                            <span style="font-size: 11px; color: var(--text-muted);">Receive immediate text alerts when your ticket position reaches 3rd in line.</span>
+                        </div>
+                        <label class="theme-switch"><input type="checkbox" checked><div class="slider"></div></label>
+                    </div>
+
+                    <div class="setting-toggle-row">
+                        <div>
+                            <p style="font-weight: 600;">Appointment Reminders (Email & Push)</p>
+                            <span style="font-size: 11px; color: var(--text-muted);">Remind 24 hours and 1 hour before scheduled office consultations.</span>
+                        </div>
+                        <label class="theme-switch"><input type="checkbox" checked><div class="slider"></div></label>
+                    </div>
+
+                    <div class="setting-toggle-row">
+                        <div>
+                            <p style="font-weight: 600;">Assignment Deadline Warnings</p>
+                            <span style="font-size: 11px; color: var(--text-muted);">Receive notifications 48 hours prior to unsubmitted assignment deadlines.</span>
+                        </div>
+                        <label class="theme-switch"><input type="checkbox" checked><div class="slider"></div></label>
+                    </div>
+
+                    <div class="setting-toggle-row" style="border-bottom: none;">
+                        <div>
+                            <p style="font-weight: 600;">Campus Events & Masterclass Digest</p>
+                            <span style="font-size: 11px; color: var(--text-muted);">Weekly email summary of upcoming campus activities and workshops.</span>
+                        </div>
+                        <label class="theme-switch"><input type="checkbox"><div class="slider"></div></label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Accessibility, Integrations, Privacy & Data -->
+            <div class="side-column">
+                
+                <!-- 4. Accessibility & Interface Preferences -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-universal-access" style="color: var(--accent-color)"></i> Accessibility & Interface
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label>Portal Theme Mode</label>
+                        <select class="form-select" id="settings-theme-select" onchange="alert('Theme setting updated!')">
+                            <option value="system">Follow System Default</option>
+                            <option value="light">Light Mode</option>
+                            <option value="dark">Dark Mode</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label>Text Scaling / Font Size</label>
+                        <select class="form-select">
+                            <option value="small">Compact (90%)</option>
+                            <option value="normal" selected>Default (100%)</option>
+                            <option value="large">Large (115%)</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-toggle-row" style="padding: 10px 0;">
+                        <div>
+                            <p style="font-size: 13px; font-weight: 600;">High Contrast Colors</p>
+                            <span style="font-size: 11px; color: var(--text-muted);">Enhances text contrast for readability</span>
+                        </div>
+                        <label class="theme-switch"><input type="checkbox"><div class="slider"></div></label>
+                    </div>
+
+                    <div class="setting-toggle-row" style="padding: 10px 0; border-bottom: none;">
+                        <div>
+                            <p style="font-size: 13px; font-weight: 600;">Reduce UI Animations</p>
+                            <span style="font-size: 11px; color: var(--text-muted);">Disables sliding panel transitions</span>
+                        </div>
+                        <label class="theme-switch"><input type="checkbox"><div class="slider"></div></label>
+                    </div>
+                </div>
+
+                <!-- 5. Connected Services & Integrations -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-link" style="color: var(--accent-color)"></i> Connected Services
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: var(--bg-body); border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fa-brands fa-microsoft" style="font-size: 20px; color: #00a4ef;"></i>
+                                <div>
+                                    <h5 style="font-size: 12px; color: var(--text-main);">Microsoft 365</h5>
+                                    <p style="font-size: 10px; color: var(--text-muted);">Outlook & Teams Sync</p>
+                                </div>
+                            </div>
+                            <span class="time-pill bg-purple" style="font-size: 10px; font-weight: bold;">CONNECTED</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: var(--bg-body); border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fa-brands fa-google" style="font-size: 20px; color: #ea4335;"></i>
+                                <div>
+                                    <h5 style="font-size: 12px; color: var(--text-main);">Google Workspace</h5>
+                                    <p style="font-size: 10px; color: var(--text-muted);">Meet & Classroom Sync</p>
+                                </div>
+                            </div>
+                            <span class="time-pill bg-blue" style="font-size: 10px; font-weight: bold;">CONNECTED</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: var(--bg-body); border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fa-solid fa-calendar-days" style="font-size: 20px; color: var(--accent-color);"></i>
+                                <div>
+                                    <h5 style="font-size: 12px; color: var(--text-main);">External Calendar Sync</h5>
+                                    <p style="font-size: 10px; color: var(--text-muted);">Sync classes to phone</p>
+                                </div>
+                            </div>
+                            <button class="action-btn navy-btn" style="padding: 4px 10px; font-size: 10px;" onclick="alert('Calendar synced to external device')">Sync now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Privacy & Directory Controls -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-user-shield" style="color: var(--accent-color)"></i> Privacy & Directory Status
+                    </div>
+
+                    <div class="setting-toggle-row" style="padding: 8px 0;">
+                        <div>
+                            <p style="font-size: 12px; font-weight: 600;">Show Profile in Student Directory</p>
+                            <span style="font-size: 10px; color: var(--text-muted);">Allows peers to find your university email</span>
+                        </div>
+                        <label class="theme-switch"><input type="checkbox" checked><div class="slider"></div></label>
+                    </div>
+
+                    <div class="setting-toggle-row" style="padding: 8px 0; border-bottom: none;">
+                        <div>
+                            <p style="font-size: 12px; font-weight: 600;">Share Academic Marks with Mentor</p>
+                            <span style="font-size: 10px; color: var(--text-muted);">Allows Ra's al Ghul to view GPA stats</span>
+                        </div>
+                        <label class="theme-switch"><input type="checkbox" checked><div class="slider"></div></label>
+                    </div>
+                </div>
+
+                <!-- 7. Data & Storage Actions -->
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-database" style="color: var(--accent-color)"></i> Local Data & Storage
+                    </div>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">
+                        Manage cached dashboard data, saved local preferences, or download your activity log.
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <button class="action-btn navy-btn" style="width: 100%; font-size: 12px;" onclick="alert('My_CampusEase_Data_Archive.json generated for download.')">
+                            <i class="fa-solid fa-download"></i> Download Personal Data Archive
+                        </button>
+                        <button class="action-btn" style="background-color: #ef4444; width: 100%; font-size: 12px;" onclick="localStorage.clear(); alert('Local cache cleared. Reloading page...'); location.reload();">
+                            <i class="fa-solid fa-trash"></i> Reset Local Cache & Preferences
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

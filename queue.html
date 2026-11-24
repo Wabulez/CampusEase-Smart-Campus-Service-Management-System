@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusEase - Virtual Queue</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <div class="logo">
+        <i class="fa-solid fa-building-columns"></i>
+        <a href="index.html" style="color: inherit; text-decoration: none"
+          ><span>CampusEase</span></a
+        >
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html"
+            ><i class="fa-solid fa-house"></i> <span>Dashboard</span></a
+          >
+        </li>
+        <li>
+          <a href="schedule.html"
+            ><i class="fa-solid fa-calendar-days"></i>
+            <span>Semester Schedule</span></a
+          >
+        </li>
+        <li>
+          <a href="assignments.html"
+            ><i class="fa-solid fa-file"></i>
+            <span>Pending Assignments</span></a
+          >
+        </li>
+        <li>
+          <a href="services.html"
+            ><i class="fa-solid fa-layer-group"></i>
+            <span>Services Directory</span></a
+          >
+        </li>
+        <li>
+          <a href="appointments.html"
+            ><i class="fa-solid fa-calendar-check"></i>
+            <span>My Appointments</span></a
+          >
+        </li>
+        <li class="active">
+          <a href="queue.html"
+            ><i class="fa-solid fa-ticket"></i> <span>Virtual Queue</span></a
+          >
+        </li>
+        <li>
+          <a href="events.html"
+            ><i class="fa-solid fa-star"></i> <span>Upcoming Events</span></a
+          >
+        </li>
+        <li>
+          <a href="feedback.html"
+            ><i class="fa-solid fa-comment-dots"></i>
+            <span>Submit Feedback</span></a
+          >
+        </li>
+        <li>
+          <a href="settings.html"
+            ><i class="fa-solid fa-gear"></i> <span>Settings</span></a
+          >
+        </li>
+      </ul>
+      <ul class="nav-links logout">
+        <li>
+          <a href="login.html"
+            ><i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Secure Log out</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button id="burger-btn" class="burger-btn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="header-right">
+          <div class="theme-switch-wrapper">
+            <span>Dark Mode</span>
+            <label class="theme-switch" for="theme-toggle">
+              <input type="checkbox" id="theme-toggle" />
+              <div class="slider"></div>
+            </label>
+          </div>
+          <div class="notification-container">
+            <i class="fa-regular fa-bell notification-bell"></i>
+            <span class="badge">3</span>
+          </div>
+          <button
+            class="header-btn"
+            onclick="window.location.href = 'login.html'"
+          >
+            Log Out
+          </button>
+        </div>
+      </header>
+
+      <h2 class="page-title">
+        <i class="fa-solid fa-ticket"></i> Virtual Queue Management System
+      </h2>
+
+      <!-- 1. Quick Stats Overview Widgets -->
+      <div
+        style="display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap"
+      >
+        <div
+          class="card"
+          style="
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 0;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+          "
+        >
+          <div
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 12px;
+              background-color: var(--accent-light);
+              color: var(--accent-color);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 22px;
+            "
+          >
+            <i class="fa-solid fa-ticket"></i>
+          </div>
+          <div>
+            <span
+              style="
+                font-size: 12px;
+                color: var(--text-muted);
+                font-weight: 600;
+                text-transform: uppercase;
+              "
+              >Active Queues</span
+            >
+            <h3
+              style="font-size: 22px; color: var(--text-main); font-weight: 700"
+            >
+              1 Ticket Active
+            </h3>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          style="
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 0;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+          "
+        >
+          <div
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 12px;
+              background-color: rgba(16, 185, 129, 0.15);
+              color: #047857;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 22px;
+            "
+          >
+            <i class="fa-solid fa-hourglass-half"></i>
+          </div>
+          <div>
+            <span
+              style="
+                font-size: 12px;
+                color: var(--text-muted);
+                font-weight: 600;
+                text-transform: uppercase;
+              "
+              >Your Wait Position</span
+            >
+            <h3 style="font-size: 22px; color: #047857; font-weight: 700">
+              2nd in Line
+            </h3>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          style="
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 0;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+          "
+        >
+          <div
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 12px;
+              background-color: var(--pill-light-blue);
+              color: var(--text-main);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 22px;
+            "
+          >
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </div>
+          <div>
+            <span
+              style="
+                font-size: 12px;
+                color: var(--text-muted);
+                font-weight: 600;
+                text-transform: uppercase;
+              "
+              >Time Saved This Term</span
+            >
+            <h3
+              style="font-size: 22px; color: var(--text-main); font-weight: 700"
+            >
+              4.5 Hours
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Left Column: Active Queue Card & Real-Time Campus Traffic Monitor -->
+        <div class="main-column">
+          <!-- Active Queue Status Card -->
+          <div class="card queue-card" style="margin-bottom: 25px">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+              "
+            >
+              <div class="card-title" style="margin-bottom: 0">
+                <i
+                  class="fa-solid fa-ticket-simple"
+                  style="color: var(--accent-color)"
+                ></i>
+                Live Ticket Monitor
+              </div>
+              <span
+                class="time-pill bg-purple"
+                style="font-size: 11px; font-weight: 700; padding: 4px 12px"
+                >IN PROGRESS</span
+              >
+            </div>
+
+            <div
+              class="queue-content"
+              style="
+                background-color: var(--bg-body);
+                padding: 20px;
+                border-radius: 14px;
+                margin-bottom: 20px;
+              "
+            >
+              <div class="ticket-info">
+                <span
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    font-weight: 600;
+                    text-transform: uppercase;
+                  "
+                  >Office / Counter</span
+                >
+                <h4
+                  style="
+                    font-size: 18px;
+                    color: var(--text-main);
+                    margin: 2px 0 10px;
+                  "
+                >
+                  Financial Aid Office — Desk 3
+                </h4>
+                <span style="font-size: 11px; color: var(--text-muted)"
+                  >Officer in Charge: <strong>Mr. Clark Kent</strong></span
+                >
+
+                <h3
+                  class="ticket-number"
+                  style="
+                    font-size: 48px;
+                    color: var(--accent-color);
+                    margin: 15px 0 10px;
+                  "
+                >
+                  #F-204
+                </h3>
+                <p
+                  class="status-update"
+                  style="font-size: 13px; font-weight: 600; color: #10b981"
+                >
+                  <span class="pulse-dot"></span> Status: Approaching Counter
+                </p>
+              </div>
+
+              <div
+                class="queue-stats"
+                style="
+                  border-left: 2px dashed var(--border-color);
+                  padding-left: 20px;
+                "
+              >
+                <div class="stat" style="margin-bottom: 15px">
+                  <span>Queue Position</span>
+                  <strong style="font-size: 26px; color: var(--text-main)"
+                    >2nd</strong
+                  >
+                </div>
+                <div class="stat" style="margin-bottom: 15px">
+                  <span>Estimated Wait</span>
+                  <strong style="font-size: 26px; color: var(--accent-color)"
+                    >~8 mins</strong
+                  >
+                </div>
+                <div class="stat">
+                  <span>Currently Serving</span>
+                  <strong style="font-size: 16px; color: var(--text-muted)"
+                    >#F-202</strong
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual Progress Steps -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 25px;
+                padding: 0 10px;
+                position: relative;
+              "
+            >
+              <div style="text-align: center; z-index: 2">
+                <div
+                  style="
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background-color: var(--accent-color);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 6px;
+                    font-size: 12px;
+                    font-weight: bold;
+                  "
+                >
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    color: var(--text-main);
+                    font-weight: 600;
+                  "
+                  >Joined</span
+                >
+              </div>
+              <div style="text-align: center; z-index: 2">
+                <div
+                  style="
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background-color: var(--accent-color);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 6px;
+                    font-size: 12px;
+                    font-weight: bold;
+                  "
+                >
+                  2
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    color: var(--accent-color);
+                    font-weight: bold;
+                  "
+                  >Approaching</span
+                >
+              </div>
+              <div style="text-align: center; z-index: 2">
+                <div
+                  style="
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background-color: var(--input-bg);
+                    color: var(--text-muted);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 6px;
+                    font-size: 12px;
+                    font-weight: bold;
+                  "
+                >
+                  3
+                </div>
+                <span style="font-size: 11px; color: var(--text-muted)"
+                  >At Desk</span
+                >
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display: flex; gap: 12px; flex-wrap: wrap">
+              <button
+                class="action-btn purple-btn"
+                style="flex: 1; min-width: 150px"
+                onclick="
+                  alert(
+                    'Ticket delayed by 10 minutes. Your position has been updated.',
+                  )
+                "
+              >
+                <i class="fa-solid fa-clock"></i> Snooze / Delay (+10m)
+              </button>
+              <button
+                class="action-btn navy-btn"
+                style="flex: 1; min-width: 150px"
+                onclick="alert('SMS notification sent to +254 700 000000.')"
+              >
+                <i class="fa-solid fa-mobile-screen-button"></i> Send SMS Alert
+              </button>
+              <button
+                class="action-btn"
+                style="background-color: #ef4444; flex: 1; min-width: 120px"
+                onclick="
+                  alert('You have left the queue. Ticket #F-204 canceled.')
+                "
+              >
+                <i class="fa-solid fa-user-xmark"></i> Leave Queue
+              </button>
+            </div>
+          </div>
+
+          <!-- Real-Time Campus Queue Traffic Monitor -->
+          <div class="card">
+            <div class="card-title">
+              <i
+                class="fa-solid fa-chart-simple"
+                style="color: var(--accent-color)"
+              ></i>
+              Live Campus Queue Traffic Monitor
+            </div>
+            <p
+              style="
+                font-size: 12px;
+                color: var(--text-muted);
+                margin-bottom: 20px;
+              "
+            >
+              Check current wait times and queue density across all department
+              counters before making a trip.
+            </p>
+
+            <div class="table-responsive">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Department & Counter</th>
+                    <th>In Line</th>
+                    <th>Est. Wait Time</th>
+                    <th>Traffic Level</th>
+                    <th>Quick Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>Registrar's Office</strong><br /><span
+                        style="font-size: 11px; color: var(--text-muted)"
+                        >In Charge: Dr. Diana Prince</span
+                      >
+                    </td>
+                    <td>14 Students</td>
+                    <td>~25 mins</td>
+                    <td>
+                      <span class="time-pill bg-purple" style="font-weight: 600"
+                        >BUSY</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="action-btn navy-btn"
+                        style="padding: 5px 12px; font-size: 11px"
+                        onclick="
+                          alert('Joined Registrar Queue! Your ticket is #R-115')
+                        "
+                      >
+                        Join Queue
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Financial Aid Office</strong><br /><span
+                        style="font-size: 11px; color: var(--text-muted)"
+                        >In Charge: Mr. Clark Kent</span
+                      >
+                    </td>
+                    <td>4 Students</td>
+                    <td>~8 mins</td>
+                    <td>
+                      <span class="time-pill bg-blue" style="font-weight: 600"
+                        >MODERATE</span
+                      >
+                    </td>
+                    <td>
+                      <span
+                        class="time-pill"
+                        style="
+                          background-color: #d1fae5;
+                          color: #065f46;
+                          font-weight: 700;
+                        "
+                        >YOU ARE HERE</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>ICT Helpdesk Desk</strong><br /><span
+                        style="font-size: 11px; color: var(--text-muted)"
+                        >In Charge: Eng. Victor Stone</span
+                      >
+                    </td>
+                    <td>1 Student</td>
+                    <td>~2 mins</td>
+                    <td>
+                      <span
+                        class="time-pill"
+                        style="
+                          background-color: #d1fae5;
+                          color: #065f46;
+                          font-weight: 600;
+                        "
+                        >LIGHT</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="action-btn purple-btn"
+                        style="padding: 5px 12px; font-size: 11px"
+                        onclick="
+                          alert('Joined ICT Queue! Your ticket is #IT-042')
+                        "
+                      >
+                        Join Queue
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Housing & Dining Desk</strong><br /><span
+                        style="font-size: 11px; color: var(--text-muted)"
+                        >In Charge: Mrs. Selina Kyle</span
+                      >
+                    </td>
+                    <td>0 Students</td>
+                    <td>Immediate</td>
+                    <td>
+                      <span
+                        class="time-pill"
+                        style="
+                          background-color: #d1fae5;
+                          color: #065f46;
+                          font-weight: 600;
+                        "
+                        >NO QUEUE</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="action-btn navy-btn"
+                        style="padding: 5px 12px; font-size: 11px"
+                        onclick="
+                          alert('Joined Housing Queue! Your ticket is #H-012')
+                        "
+                      >
+                        Join Queue
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Security & Student Badging</strong><br /><span
+                        style="font-size: 11px; color: var(--text-muted)"
+                        >In Charge: Major (Rtd.) James Gordon</span
+                      >
+                    </td>
+                    <td>3 Students</td>
+                    <td>~6 mins</td>
+                    <td>
+                      <span class="time-pill bg-blue" style="font-weight: 600"
+                        >MODERATE</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="action-btn purple-btn"
+                        style="padding: 5px 12px; font-size: 11px"
+                        onclick="
+                          alert(
+                            'Joined Security Queue! Your ticket is #SEC-089',
+                          )
+                        "
+                      >
+                        Join Queue
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Recent Queue Ticket History -->
+          <div class="card">
+            <div class="card-title">
+              <i
+                class="fa-solid fa-history"
+                style="color: var(--accent-color)"
+              ></i>
+              Queue Activity Log (This Term)
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <div
+                style="
+                  padding-bottom: 12px;
+                  border-bottom: 1px solid var(--border-color);
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <div>
+                  <h4 style="font-size: 13px; color: var(--text-main)">
+                    #IT-031 — ICT Helpdesk (Wi-Fi Login Fix)
+                  </h4>
+                  <p style="font-size: 11px; color: var(--text-muted)">
+                    Served by Eng. Victor Stone • Nov 01 @ 11:20 AM (Wait: 4
+                    mins)
+                  </p>
+                </div>
+                <span
+                  class="time-pill"
+                  style="
+                    background-color: #d1fae5;
+                    color: #065f46;
+                    font-size: 10px;
+                    font-weight: bold;
+                  "
+                  >SERVED</span
+                >
+              </div>
+
+              <div
+                style="
+                  padding-bottom: 12px;
+                  border-bottom: 1px solid var(--border-color);
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <div>
+                  <h4 style="font-size: 13px; color: var(--text-main)">
+                    #R-098 — Registrar's Office (Transcript Request)
+                  </h4>
+                  <p style="font-size: 11px; color: var(--text-muted)">
+                    Served by Dr. Diana Prince • Oct 22 @ 02:45 PM (Wait: 18
+                    mins)
+                  </p>
+                </div>
+                <span
+                  class="time-pill"
+                  style="
+                    background-color: #d1fae5;
+                    color: #065f46;
+                    font-size: 10px;
+                    font-weight: bold;
+                  "
+                  >SERVED</span
+                >
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <div>
+                  <h4 style="font-size: 13px; color: var(--text-main)">
+                    #SEC-044 — Campus Security (Gate Pass Renewal)
+                  </h4>
+                  <p style="font-size: 11px; color: var(--text-muted)">
+                    Canceled by Student • Oct 10 @ 09:15 AM
+                  </p>
+                </div>
+                <span
+                  class="time-pill"
+                  style="
+                    background-color: rgba(239, 68, 68, 0.15);
+                    color: #ef4444;
+                    font-size: 10px;
+                    font-weight: bold;
+                  "
+                  >CANCELED</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Join Queue Form, Alert Settings, How it Works -->
+        <div class="side-column">
+          <!-- Join a Queue Form -->
+          <div class="card">
+            <div class="card-title">
+              <i
+                class="fa-solid fa-plus-circle"
+                style="color: var(--accent-color)"
+              ></i>
+              Join a Department Queue
+            </div>
+            <form
+              onsubmit="
+                event.preventDefault();
+                alert('Virtual Queue Ticket generated successfully!');
+              "
+            >
+              <div class="form-group" style="margin-bottom: 15px">
+                <label>Select Department *</label>
+                <select class="form-select" required>
+                  <option value="" disabled selected>Choose office...</option>
+                  <option value="registrar">
+                    Registrar's Office (Transcripts & Records)
+                  </option>
+                  <option value="financial">
+                    Financial Aid Office (Bursary & Grants)
+                  </option>
+                  <option value="it">
+                    ICT Helpdesk (Wi-Fi, Email & Portal Support)
+                  </option>
+                  <option value="housing">Housing & Student Dining</option>
+                  <option value="health">Student Health Center Clinic</option>
+                  <option value="security">Campus Security & Badging</option>
+                  <option value="library">
+                    University Library Information Desk
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 15px">
+                <label>Service Reason / Query Type *</label>
+                <select class="form-select" required>
+                  <option value="inquiry">General Inquiry</option>
+                  <option value="document">
+                    Document Collection / Stamping
+                  </option>
+                  <option value="clearance">Fee / Academic Clearance</option>
+                  <option value="tech">Technical Troubleshooting</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 20px">
+                <label>Notification Phone Number</label>
+                <input
+                  type="tel"
+                  class="form-select"
+                  value="+254 700 000000"
+                  placeholder="+254 ..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="action-btn purple-btn"
+                style="width: 100%"
+              >
+                <i class="fa-solid fa-ticket"></i> Generate Queue Ticket
+              </button>
+            </form>
+          </div>
+
+          <!-- Alert Preferences Card -->
+          <div class="card">
+            <div class="card-title">
+              <i
+                class="fa-solid fa-bell"
+                style="color: var(--accent-color)"
+              ></i>
+              Queue Notification Settings
+            </div>
+
+            <div class="setting-toggle-row" style="padding: 10px 0">
+              <div>
+                <p style="font-size: 13px">SMS Notification when 3rd in Line</p>
+                <span style="font-size: 11px; color: var(--text-muted)"
+                  >Recommended for remote waiting</span
+                >
+              </div>
+              <label class="theme-switch"
+                ><input type="checkbox" checked />
+                <div class="slider"></div
+              ></label>
+            </div>
+
+            <div class="setting-toggle-row" style="padding: 10px 0">
+              <div>
+                <p style="font-size: 13px">Browser Push Sound Notification</p>
+                <span style="font-size: 11px; color: var(--text-muted)"
+                  >Chimes when counter is called</span
+                >
+              </div>
+              <label class="theme-switch"
+                ><input type="checkbox" checked />
+                <div class="slider"></div
+              ></label>
+            </div>
+
+            <div
+              class="setting-toggle-row"
+              style="padding: 10px 0; border-bottom: none"
+            >
+              <div>
+                <p style="font-size: 13px">Auto-Snooze if Not Present</p>
+                <span style="font-size: 11px; color: var(--text-muted)"
+                  >Holds place for 5 mins if delayed</span
+                >
+              </div>
+              <label class="theme-switch"
+                ><input type="checkbox" />
+                <div class="slider"></div
+              ></label>
+            </div>
+          </div>
+
+          <!-- How Virtual Queuing Works Card -->
+          <div class="card" style="background-color: var(--accent-light)">
+            <div class="card-title" style="color: var(--text-main)">
+              <i
+                class="fa-solid fa-lightbulb"
+                style="color: var(--accent-color)"
+              ></i>
+              How Remote Queuing Works
+            </div>
+
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                font-size: 12px;
+                color: var(--text-main);
+                line-height: 1.5;
+              "
+            >
+              <div style="display: flex; gap: 10px; align-items: flex-start">
+                <span
+                  style="
+                    background-color: var(--accent-color);
+                    color: white;
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 11px;
+                    flex-shrink: 0;
+                  "
+                  >1</span
+                >
+                <p>
+                  <strong>Take a Digital Ticket:</strong> Select your department
+                  from anywhere on campus using your laptop or mobile phone.
+                </p>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: flex-start">
+                <span
+                  style="
+                    background-color: var(--accent-color);
+                    color: white;
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 11px;
+                    flex-shrink: 0;
+                  "
+                  >2</span
+                >
+                <p>
+                  <strong>Wait Comfortably Anywhere:</strong> Study in the
+                  library or grab food at the cafeteria while keeping an eye on
+                  your live position.
+                </p>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: flex-start">
+                <span
+                  style="
+                    background-color: var(--accent-color);
+                    color: white;
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 11px;
+                    flex-shrink: 0;
+                  "
+                  >3</span
+                >
+                <p>
+                  <strong>Walk to Office when Alerted:</strong> You will receive
+                  an SMS and screen push alert when you are 3rd in line.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

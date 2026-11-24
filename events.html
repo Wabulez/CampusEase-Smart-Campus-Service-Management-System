@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusEase - Upcoming Events</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-building-columns"></i>
+            <a href="index.html" style="color: inherit; text-decoration: none;"><span>CampusEase</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+            <li><a href="schedule.html"><i class="fa-solid fa-calendar-days"></i> <span>Semester Schedule</span></a></li>
+            <li><a href="assignments.html"><i class="fa-solid fa-file"></i> <span>Pending Assignments</span></a></li>
+            <li><a href="services.html"><i class="fa-solid fa-layer-group"></i> <span>Services Directory</span></a></li>
+            <li><a href="appointments.html"><i class="fa-solid fa-calendar-check"></i> <span>My Appointments</span></a></li>
+            <li><a href="queue.html"><i class="fa-solid fa-ticket"></i> <span>Virtual Queue</span></a></li>
+            <li class="active"><a href="events.html"><i class="fa-solid fa-star"></i> <span>Upcoming Events</span></a></li>
+            <li><a href="feedback.html"><i class="fa-solid fa-comment-dots"></i> <span>Submit Feedback</span></a></li>
+            <li><a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+        </ul>
+        <ul class="nav-links logout">
+            <li><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Secure Log out</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <button id="burger-btn" class="burger-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="header-right">
+                <div class="theme-switch-wrapper">
+                    <span>Dark Mode</span>
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+                <div class="notification-container">
+                    <i class="fa-regular fa-bell notification-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <button class="header-btn" onclick="window.location.href='login.html'">Log Out</button>
+            </div>
+        </header>
+
+        <h2 class="page-title"><i class="fa-solid fa-star"></i> Campus Events & Activities</h2>
+
+        <!-- 1. Featured Spotlight Banner -->
+        <div class="card" style="background: linear-gradient(135deg, var(--bg-sidebar), var(--accent-color)); color: white; padding: 25px; border-radius: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <div style="max-width: 600px;">
+                    <span class="time-pill" style="background-color: rgba(255,255,255,0.2); color: white; font-weight: 700; margin-bottom: 10px;">MAJOR FEATURED EVENT</span>
+                    <h2 style="font-size: 26px; font-weight: 700; margin-bottom: 8px;">Annual Campus Hackathon 2026: Tech For Good</h2>
+                    <p style="font-size: 13px; opacity: 0.9; line-height: 1.6; margin-bottom: 15px;">
+                        48 hours of non-stop coding, mentorship, free meals, and cash prizes! Collaborate in teams to build innovative web and mobile solutions for real-world community challenges.
+                    </p>
+                    <div style="display: flex; gap: 20px; font-size: 12px; opacity: 0.9; margin-bottom: 15px; flex-wrap: wrap;">
+                        <span><i class="fa-regular fa-calendar"></i> Nov 18 - Nov 20, 2026</span>
+                        <span><i class="fa-solid fa-location-dot"></i> G15 Hall and Computer Labs</span>
+                        <span><i class="fa-solid fa-trophy"></i> Ksh 300,000 Prize Pool</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="action-btn" style="background-color: white; color: var(--bg-sidebar); padding: 14px 28px; font-weight: 700;" onclick="alert('Registered for Annual Campus Hackathon 2026!')">Register Team Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Search & Filter Bar -->
+        <div class="card" style="margin-bottom: 25px;">
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+                <div style="flex: 1; min-width: 250px; position: relative;">
+                    <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                    <input type="text" class="form-select" placeholder="Search events by title, venue, or keyword..." style="padding-left: 40px; margin: 0;">
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span class="time-pill bg-purple" style="cursor: pointer; padding: 8px 14px; font-weight: 600;">All Events (12)</span>
+                    <span class="time-pill" style="cursor: pointer; padding: 8px 14px; background-color: var(--input-bg); color: var(--text-muted);">Workshops & Tech</span>
+                    <span class="time-pill" style="cursor: pointer; padding: 8px 14px; background-color: var(--input-bg); color: var(--text-muted);">Career & Networking</span>
+                    <span class="time-pill" style="cursor: pointer; padding: 8px 14px; background-color: var(--input-bg); color: var(--text-muted);">Social & Student Life</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Complete 12 Upcoming Events Grid -->
+        <div class="full-grid-3">
+            
+            <!-- Event 1 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Gemini AI Masterclass for Students</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Wed, Nov 4 @ 2:00 PM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Learn prompt engineering, synthetic dataset creation, and Google AI Studio tool integration for academic research and CS projects.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: G15 Hall</p>
+                <button class="action-btn purple-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for Gemini AI Masterclass!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Mental Health Awareness Walk 2026</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Sat, Nov 14 @ 7:00 AM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Join the campus community for a 5km awareness walk to promote wellness and stress management. Free t-shirts for early birds!
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: Ngong Road Forest Sanctuary</p>
+                <button class="action-btn navy-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for Mental Health Walk!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Hackathon</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Wed, Nov 18 @ 10:00 AM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Test your ethical hacking skills in web security, cryptography, and reverse engineering. Hosted by the CS Cyber Security Club.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: G15 Hall</p>
+                <button class="action-btn purple-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for Hackathon Challenge!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Riara Career Fair</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Thu, Dec 3 @ 9:00 AM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Meet recruiters from top tech companies, software consultancies, and financial firms. Bring copies of your updated CV!
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: Riara Garden Grounds and G15 Hall</p>
+                <button class="action-btn navy-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for Career Fair!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 5 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Riara VC Cup</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Friday, November 20 @ 9:00 AM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Cheer for your team in several different competitions. Food and drink stalls will be available.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: ABSA Sports Club Utalii Thika Road</p>
+                <button class="action-btn purple-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for Annual Riara VC Cup Tournament!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 6 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Open Source Contribution Day</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Tue, Dec 8 @ 1:00 PM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Learn Git workflows and submit your first Pull Request to active open-source repositories guided by senior developers.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: Robotics Lab</p>
+                <button class="action-btn navy-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for Open Source Day!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 7 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>AWS & Cloud Computing Bootcamp</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Sat, Nov 28 @ 9:00 AM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Hands-on lab session covering EC2 deployment, S3 storage, and serverless Lambda functions. Free AWS vouchers provided.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: Room 1/15</p>
+                <button class="action-btn purple-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for AWS Bootcamp!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 8 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>CS Research & Innovation Expo 2026</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Fri, Dec 11 @ 10:00 AM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Final year students present capstone projects, AI models, and software systems to faculty panels and industry judges.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: G15 Hall</p>
+                <button class="action-btn navy-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for CS Research Expo!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 9 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Campus Cultural Night & Fashion Show</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Fri, Dec 11 @ 5:00 PM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Celebrate diversity with music performances, fashion shows, traditional cuisine, and live band entertainment.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: MassHouse</p>
+                <button class="action-btn purple-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for Cultural Night!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 10 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Student Startup Pitch Competition</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Wed, Dec 16 @ 2:00 PM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Watch top student entrepreneurs pitch business ideas to angel investors and venture capitalists for seed funding.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: G15 Hall</p>
+                <button class="action-btn navy-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for Startup Pitch!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 11 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Graduation Dinner and Awards Ceremony</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Fri, Dec 18 @ 6:00 PM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Dress to impress! Celebrating outstanding student achievements, club leadership awards, and semester wrap-up dinner.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: Kempinsky Hotel</p>
+                <button class="action-btn purple-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for End of Semester Gala!')">RSVP Now</button>
+            </div>
+
+            <!-- Event 12 -->
+            <div class="card event-card-large">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="event-image" alt="Event">
+                <h4>Tech Leadership & Diversity Panel</h4>
+                <p style="font-size: 12px; color: var(--accent-color); margin: 5px 0 10px; font-weight: 600;">
+                    <i class="fa-regular fa-calendar"></i> Mon, Dec 21 @ 3:00 PM
+                </p>
+                <p style="font-size: 12px; color: var(--text-muted); flex-grow: 1; margin-bottom: 15px;">
+                    Panel discussion with women leaders in technology discussing career growth, overcoming barriers, and mentorship.
+                </p>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Venue: 1/15</p>
+                <button class="action-btn navy-btn" style="width: 100%;" onclick="alert('RSVP Confirmed for Tech Leadership Panel!')">RSVP Now</button>
+            </div>
+
+        </div>
+
+        <!-- 4. Proposal / Club Event Submission Section -->
+        <div class="card" style="margin-top: 30px;">
+            <div class="card-title"><i class="fa-solid fa-bullhorn" style="color: var(--accent-color)"></i> Want to Host a Student Event?</div>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                <p style="font-size: 13px; color: var(--text-muted); max-width: 700px; line-height: 1.6;">
+                    Are you a student club leader or departmental representative? Submit your event proposal for university approval, venue booking, and promotional publishing on CampusEase.
+                </p>
+                <button class="action-btn purple-btn" onclick="alert('Event Submission Form opened!')"><i class="fa-solid fa-plus-circle"></i> Submit Event Proposal</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

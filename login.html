@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusEase - Login</title>
+    
+    <!-- External Font and Icon Libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <!-- Main Branding outside the box -->
+    <h2 class="logo">
+        <i class="fa-solid fa-building-columns"></i>
+        CampusEase
+    </h2>
+
+    <div class="container" id="container">
+        
+        <!-- Sign Up Form (Hidden by default) -->
+        <!-- Sign Up Form -->
+<div class="form-container sign-up-container">
+    <form action="#">
+        <h1>Create Account</h1>
+        <span>Please use your university email for registration</span>
+        <input type="text" placeholder="Full Name" required />
+        <input type="text" placeholder="Student/Staff ID" required />
+        <input type="email" placeholder="University Email" required />
+        <input type="password" placeholder="Password" required />
+        <select required>
+            <option value="" disabled selected>Select Role...</option>
+            <option value="student">Student</option>
+            <option value="staff">Administrative Staff</option>
+        </select>
+
+        <!-- Terms and Conditions Checkbox (Opens Modal on Same Page) -->
+        <div class="terms-container">
+            <input type="checkbox" id="terms-checkbox" required />
+            <label for="terms-checkbox">
+                I agree to the <a href="javascript:void(0)" onclick="openTermsModal()">Terms and Conditions</a>
+            </label>
+        </div>
+
+        <button type="button" onclick="handleSignUp()">Sign Up</button>
+    </form>
+</div>
+
+<!-- Same-Page Terms & Conditions Modal Overlay -->
+<div id="terms-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card">
+        <div class="terms-header">
+            <h1>
+                <i class="fa-solid fa-file-contract" style="color: var(--accent-color, #8b5cf6);"></i>
+                Terms & Conditions
+            </h1>
+            <button class="modal-close-btn" onclick="closeTermsModal()">&times;</button>
+        </div>
+
+        <div class="terms-content">
+            <p><strong>Effective Date:</strong> November 10, 2026</p>
+            <p>Welcome to <strong>CampusEase</strong>, the official smart administrative services and student portal for Riara University. By creating an account or accessing our services, you agree to comply with and be bound by the following Terms and Conditions.</p>
+
+            <h3><i class="fa-solid fa-user-shield" style="color: var(--accent-color, #8b5cf6);"></i> 1. Account Responsibilities</h3>
+            <p>To access CampusEase, you must be a registered student, faculty member, or administrative staff member with valid university credentials.</p>
+            <ul>
+                <li>You are responsible for maintaining the confidentiality of your login password and account credentials.</li>
+                <li>You agree not to share your account access with unauthorized third parties.</li>
+                <li>Any administrative requests, queue reservations, or assignment submissions made through your account are deemed to be submitted by you.</li>
+            </ul>
+
+            <h3><i class="fa-solid fa-ticket" style="color: var(--accent-color, #8b5cf6);"></i> 2. Virtual Queue & Appointment Policies</h3>
+            <p>CampusEase provides remote queuing and administrative appointment scheduling for campus offices (Registrar, Financial Aid, IT Helpdesk, Housing, etc.).</p>
+            <ul>
+                <li>Students must arrive at the designated department within 5 minutes of receiving their "Approaching Counter" notification.</li>
+                <li>Intentional abuse of the virtual queue system (e.g., generating false tickets without intent to attend) may result in temporary queue suspension.</li>
+                <li>Appointments may be canceled or rescheduled up to 1 hour prior to the scheduled slot without penalty.</li>
+            </ul>
+
+            <h3><i class="fa-solid fa-file-arrow-up" style="color: var(--accent-color, #8b5cf6);"></i> 3. Academic Integrity & Submissions</h3>
+            <p>Assignments and coursework uploaded via the Assignments Portal must strictly comply with university academic honesty guidelines.</p>
+            <ul>
+                <li>Files submitted must be free of malicious software, viruses, or corrupted data.</li>
+                <li>Submissions are logged with automated timestamping reflecting the exact time of upload.</li>
+            </ul>
+
+            <h3><i class="fa-solid fa-lock" style="color: var(--accent-color, #8b5cf6);"></i> 4. Privacy & Data Handling</h3>
+            <p>Your privacy is important to us. CampusEase collects personal academic records, attendance records, and service interactions strictly for educational and administrative support.</p>
+
+            <h3><i class="fa-solid fa-gavel" style="color: var(--accent-color, #8b5cf6);"></i> 5. Service Availability & Modifications</h3>
+            <p>Riara University reserves the right to modify, suspend, or update CampusEase service modules during scheduled maintenance windows.</p>
+        </div>
+
+        <div class="terms-footer">
+            <button class="action-btn navy-btn" onclick="closeTermsModal()">Decline & Close</button>
+            <button class="action-btn purple-btn" onclick="acceptTermsAndClose()">I Understand & Accept</button>
+        </div>
+    </div>
+</div>
+        
+        <!-- Sign In Form (Active by default) -->
+        <div class="form-container sign-in-container">
+            <form action="index.html">
+                <h1>Sign In</h1>
+                <span>Please use your email and password to sign in</span>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="forgot-password.html">Forgot your password?</a>
+                <!-- Link acts as a submit for visual testing purposes -->
+                <button type="button" onclick="window.location.href='index.html'">Sign In</button>
+            </form>
+        </div>
+        
+        <!-- Sliding Overlay Panel -->
+        <div class="overlay-container">
+            <div class="overlay">
+                
+                <!-- Left Overlay (Visible when Sign Up is active) -->
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with your campus services, please log in with your personal credentials.</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                
+                <!-- Right Overlay (Visible when Sign In is active) -->
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Student!</h1>
+                    <p>Are you new here? Click the button below to register and get full access to the CampusEase dashboard.</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
