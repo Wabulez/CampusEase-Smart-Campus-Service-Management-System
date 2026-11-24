@@ -88,13 +88,13 @@ Because **CampusEase** is built with lightweight, zero-dependency web standards,
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/campusease.git
+   git clone https://github.com/Wabulez/CampusEase-Smart-Campus-Service-Management-System.git
    ```
 
 2. **Navigate to the project folder:**
 
    ```bash
-   cd campusease
+   cd CampusEase-Smart-Campus-Service-Management-System
    ```
 
 3. **Launch the application:**
