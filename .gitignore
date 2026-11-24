@@ -1,0 +1,12 @@
+# macOS system files
+.DS_Store
+
+# Windows thumbnail & folder cache files
+Thumbs.db
+Desktop.ini
+
+# Visual Studio Code local workspace settings
+.vscode/
+
+# JetBrains IDEs (WebStorm, IntelliJ, etc.)
+.idea/
